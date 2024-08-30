@@ -1,28 +1,17 @@
 <?php
 
-class Vehicle
-{
-    public function __construct(private string $problemType) {}
+declare(strict_types=1);
 
-    public function problem(): string
-    {
-        return $this->problemType;
-    }
-}
+use Thiiagoms\LSP\Services\Mechanic\MechanicService;
+use Thiiagoms\LSP\Services\Vehicle\AudiService;
+use Thiiagoms\LSP\Services\Vehicle\MercedesService;
 
-class Car extends Vehicle {}
+require_once __DIR__ . '/vendor/autoload.php';
 
-class Mercedes extends Car {}
+$mechanic = new MechanicService();
 
-class Mechanic
-{
-    public function fix(Mercedes $car): string
-    {
-        return 'Mechanic is fixing ' . get_class($car) . ' ' . $car->problem();
-    }
-}
+$mercedes = new MercedesService('Tire');
+$audi = new AudiService('Break');
 
-$mechanic = new Mechanic();
-$car = new Car('Gear Box');
-
-echo $mechanic->fix($car) . PHP_EOL;
+echo $mechanic->fix($mercedes) . PHP_EOL;
+echo $mechanic->fix($audi) . PHP_EOL;

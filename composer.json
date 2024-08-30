@@ -1,0 +1,15 @@
+{
+    "name": "thiiagoms/lsp-php",
+    "description": "liskov Substitution Principle (LSP) in PHP for Composer Packages:",
+    "autoload": {
+        "psr-4": {
+            "Thiiagoms\\LSP\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thiiagoms",
+            "email": "thiagom.devsec@gmail.com"
+        }
+    ]
+}
